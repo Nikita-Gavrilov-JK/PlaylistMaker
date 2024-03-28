@@ -4,16 +4,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/blue"
     android:orientation="vertical"
-    android:padding="@dimen/padding_16dp">
+    style="@style/MainBase">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/playlist_maker"
         android:layout_gravity="start"
         android:textColor="@color/white"
-        android:text="@string/playlist_maker"
         android:textSize="24sp"/>
 
     <LinearLayout
@@ -28,10 +27,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:text="@string/search"
-            android:textSize="@dimen/text_size_20sp"
-            android:textAllCaps="false"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black_text"
+            style="@style/MainButtonStyle"
             app:icon="@drawable/search_light"
             app:iconGravity="textStart"
             app:iconPadding="@dimen/icon_padding_4dp"
@@ -43,27 +39,22 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
+            style="@style/MainButtonStyle"
             android:text="@string/media"
-            android:textSize="@dimen/text_size_20sp"
-            android:textAllCaps="false"
-            android:textColor="@color/black_text"
             app:cornerRadius="@dimen/corner_radius_12dp"
             app:icon="@drawable/media_light"
             app:iconGravity="textStart"
             app:iconPadding="@dimen/icon_padding_4dp"
             app:iconTint="@color/black"/>
 
+
         <Button
             android:id="@+id/settings_button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/white"
             android:text="@string/settings"
-            android:textSize="@dimen/text_size_20sp"
-            android:textAllCaps="false"
-            android:textColor="@color/black_text"
+            style="@style/MainButtonStyle"
             app:icon="@drawable/settings_light"
             app:iconGravity="textStart"
             app:iconPadding="@dimen/icon_padding_4dp"
