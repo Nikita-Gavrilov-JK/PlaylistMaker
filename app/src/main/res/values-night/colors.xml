@@ -10,12 +10,12 @@
     <color name="blue">#42aaff</color>
     <color name="black_text">#1A1B22</color>
     <color name="icon_color_light">#1A1B22</color>
-    <color name="icon_color_settings">#AEAFB4</color>
-    <color name="icon_strelka_back_settings">#1A1B22</color>
-    <color name="color_title_name">#1A1B22</color>
-    <color name="color_switch_text">#1A1B22</color>
-    <color name="icon_search">#AEAFB4</color>
-    <color name="icon_cancel">#AEAFB4</color>
-    <color name="text_search">#818C99</color>
-    <color name="text_search_title">#1A1B22</color>
+    <color name="icon_color_settings">#FFFFFFFF</color>
+    <color name="color_title_name">#FFFFFFFF</color>
+    <color name="icon_strelka_back_settings">#FFFFFFFF</color>
+    <color name="color_switch_text">#FFFFFFFF</color>
+    <color name="icon_search">#1A1B22</color>
+    <color name="icon_cancel">#1A1B22</color>
+    <color name="text_search">#1A1B22</color>
+    <color name="text_search_title">#FFFFFFFF</color>
 </resources>
