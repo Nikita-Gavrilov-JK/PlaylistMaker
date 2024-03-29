@@ -11,17 +11,16 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import androidx.core.view.isVisible
 
 class SearchActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
         val backButSearch = findViewById<ImageButton>(R.id.backButtonSearch)
         backButSearch.setOnClickListener {
-            val backButIntent = Intent(this, MainActivity::class.java)
-            startActivity(backButIntent)
+            finish()
         }
 
         val editText = findViewById<EditText>(R.id.edit_text)
@@ -33,7 +32,7 @@ class SearchActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
-                clearButton.visibility = if (s.isNotEmpty()) View.VISIBLE else View.GONE
+                clearButton.isVisible = s.isNotEmpty()
             }
 
             override fun afterTextChanged(s: Editable) {
