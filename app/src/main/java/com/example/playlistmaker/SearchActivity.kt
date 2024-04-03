@@ -14,6 +14,7 @@ import android.widget.ImageButton
 import androidx.core.view.isVisible
 
 class SearchActivity : AppCompatActivity() {
+    private var searchText: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
@@ -24,6 +25,7 @@ class SearchActivity : AppCompatActivity() {
         }
 
         val editText = findViewById<EditText>(R.id.edit_text)
+        editText.setText(searchText)
         val clearButton = findViewById<Button>(R.id.clear_button)
 
         editText.addTextChangedListener(object : TextWatcher {
@@ -32,6 +34,7 @@ class SearchActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                searchText = s.toString()
                 clearButton.isVisible = s.isNotEmpty()
             }
 
@@ -46,5 +49,16 @@ class SearchActivity : AppCompatActivity() {
             val keyboard = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             keyboard.hideSoftInputFromWindow(it.windowToken, 0)
         }
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("searchText", searchText)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        searchText = savedInstanceState.getString("searchText", "")
+        val editText = findViewById<EditText>(R.id.edit_text)
+        editText.setText(searchText)
     }
 }

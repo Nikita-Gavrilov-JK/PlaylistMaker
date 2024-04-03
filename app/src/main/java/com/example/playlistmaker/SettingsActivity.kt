@@ -45,15 +45,14 @@ class SettingsActivity : AppCompatActivity() {
         val supportButton: Button = findViewById(R.id.write_support)
         supportButton.setOnClickListener {
             val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:") // only email apps should handle this
+                data = Uri.parse("mailto:")
                 putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.my_email)))
                 putExtra(Intent.EXTRA_SUBJECT, getString(R.string.massage_developers))
                 putExtra(Intent.EXTRA_TEXT, getString(R.string.massage_thx_app))
             }
 
-            if (emailIntent.resolveActivity(packageManager) != null) {
-                startActivity(emailIntent)
-            }
+            val chooseEmail =  Intent.createChooser(emailIntent,"Отправка на почту")
+            startActivity(chooseEmail)
         }
 
         val agreementButton: Button = findViewById(R.id.custom_app)
