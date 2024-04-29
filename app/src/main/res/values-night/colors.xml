@@ -18,4 +18,5 @@
     <color name="icon_cancel">#1A1B22</color>
     <color name="text_search">#1A1B22</color>
     <color name="text_search_title">#FFFFFFFF</color>
+    <color name="track_name">#FFFFFF</color>
 </resources>
