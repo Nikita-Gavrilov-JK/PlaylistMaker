@@ -41,7 +41,6 @@ class SettingsActivity : AppCompatActivity() {
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
         }
-
         val supportButton: Button = findViewById(R.id.write_support)
         supportButton.setOnClickListener {
             val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
